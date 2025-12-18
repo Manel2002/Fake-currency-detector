@@ -12,7 +12,7 @@ except FileNotFoundError:
 except Exception as e:
     st.error(f"An unexpected error occurred while loading the model: {e}")
 
-st.title("💵 Fake Currency Detection System")
+st.title(" Fake Currency Detection System💵")
 st.write("Enter the geometric features of the banknote:")
 # Inputs with placeholders
 diagonal = st.number_input("Diagonal", min_value=0.0, format="%.2f")
@@ -34,12 +34,12 @@ if st.button("Check Currency"):
 
         if prediction == 1:
             st.markdown(
-                f"<div class='result real'>✅ Real Currency<br>Confidence: {probability*100:.2f}%</div>",
+                f"<div class='result real'> Real Currency<br>Confidence✅: {probability*100:.2f}%</div>",
                 unsafe_allow_html=True
             )
         else:
             st.markdown(
-                f"<div class='result fake'>❌ Fake Currency<br>Confidence: {probability*100:.2f}%</div>",
+                f"<div class='result fake'> Fake Currency<br>Confidence❌: {probability*100:.2f}%</div>",
                 unsafe_allow_html=True
             )
             
