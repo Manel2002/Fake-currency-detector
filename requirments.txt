@@ -1,0 +1,5 @@
+to excute the app.py you must install:
+streamlit
+numpy 
+scikit-learn
+joblib 
