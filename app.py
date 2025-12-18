@@ -12,7 +12,8 @@ except FileNotFoundError:
 except Exception as e:
     st.error(f"An unexpected error occurred while loading the model: {e}")
 
-
+st.title("💵 Fake Currency Detection System")
+st.write("Enter the geometric features of the banknote:")
 # Inputs with placeholders
 diagonal = st.number_input("Diagonal", min_value=0.0, format="%.2f")
 height_left = st.number_input("Height Left", min_value=0.0, format="%.2f")
