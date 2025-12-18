@@ -6,9 +6,18 @@ import sys
 st.write(sys.executable)
 
 # loading the model import joblib
-model = joblib.load("logistic_currency_model.pkl")
 
-st.title("💵 Fake Currency Detection System")
+try:
+    model = joblib.load("logistic_currency_model.pkl")
+except FileNotFoundError:
+    st.error("Model file not found. Please check the filename and location.")
+except Exception as e:
+    st.error(f"An unexpected error occurred while loading the model: {e}")
+
+
+
+
+st.title(" Fake Currency Detection System 💵")
 st.write("Enter the geometric features of the banknote:")
 
 # Inputs
@@ -28,6 +37,6 @@ if st.button("Check Currency"):
     probability = model.predict_proba(sample)[0][prediction]#probabilty of the prediction 
 
     if prediction == 1:
-        st.success(f"✅ Real Currency\nConfidence: {probability*100:.2f}%")
+        st.success(f" Real Currency\nConfidence✅: {probability*100:.2f}%")
     else:
-        st.error(f"❌ Fake Currency\nConfidence: {probability*100:.2f}%")
+        st.error(f" Fake Currency\nConfidence❌: {probability*100:.2f}%")
