@@ -1,12 +1,12 @@
 import streamlit as st
-import joblib as load 
+import joblib 
 import numpy as np
 
 import sys
 st.write(sys.executable)
 
-# loading the model 
-model = load("logistic_currency_model.pkl")
+# loading the model import joblib
+model = joblib.load("logistic_currency_model.pkl")
 
 st.title("💵 Fake Currency Detection System")
 st.write("Enter the geometric features of the banknote:")
