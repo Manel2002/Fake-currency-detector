@@ -2,8 +2,6 @@ import streamlit as st
 import joblib 
 import numpy as np
 
-import sys
-st.write(sys.executable)
 
 # loading the model import joblib
 
